@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <h1>Hello it's <%= ejsDay %></h1>
+    <h1>TODO List for Today</h1>
+    <br>
+    <hr>
+    <div class = " glass">
+    
+        
+        
+        <% for(var i = 0 ; i < newTodoItem.length ; i++){ %>
+        <form action= "/delete" method = "post">
+            <div class = "it">
+                <label>
+                <input type="checkbox" name="check" id="check" onChange = "this.form.submit()" value="<%=newTodoItem[i] %>">
+                <p><%= newTodoItem[i] %></p>
+            </label>
+            </div>
+        </form>
+        <% } %>
+
+    </div>
+    <form action="/" method="post" class="list">
+        <input type="text" name="newTodo" id="newTodo" class = "text">
+        <button type="submit" class = "btn">+</button>
+        <button type="button" class = "btn"  id = "dele" name="dele">Delete All</button>
+        
+    </form>
+     
+</body>
+</html>
